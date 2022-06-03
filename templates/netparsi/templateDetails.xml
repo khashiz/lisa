@@ -21,6 +21,16 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="presetcolor" type="color" label="NTP_PRESET_COLOR" />
+				<field name="default_header_bg" type="media" label="DEFAULT_HEADER_BG" />
+				<field name="specer1" type="spacer" hr="true" />
+				<field name="hours_title" type="text" label="NTP_HOURS_TITLE" />
+				<field name="hours_text" type="textarea" label="NTP_HOURS_TEXT" />
+				<field name="hours" type="subform" label="NTP_HOURS" multiple="true" min="1" max="7">
+					<form>
+						<field name="title" type="text" label="NTP_TITLE" />
+						<field name="value" type="text" label="NTP_VALuE" />
+					</form>
+				</field>
 			</fieldset>
 			<fieldset name="CONTACT">
 				<field name="email" type="text" label="NTP_EMAIL" />

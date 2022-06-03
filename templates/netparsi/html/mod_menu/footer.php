@@ -74,7 +74,7 @@ if ($tagId = $params->get('tag_id', ''))
 		$class .= ' parent';
 	}
 
-	echo '<li class="uk-text-small' . $class . '">';
+	echo '<li class="uk-text-small ' . $class . '">';
 
 	switch ($item->type) :
 		case 'separator':

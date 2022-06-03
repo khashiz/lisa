@@ -1,3 +1,9 @@
+// Fonts
+@font-face {
+  font-family: "Pinar";
+  src: url("../font/Pinar-VF[wght-KSHD-DSTY].woff2")
+}
+.font{font-family: "Pinar", Helvetica, sans-serif;}
 .formContainer{padding: 0; margin: 0; border: 0; outline: none;}
 .ltr{direction: ltr;}
 .rtl{direction: rtl;}
@@ -6,3 +12,193 @@ a[href^=tel]{color: inherit;}
 .uk-text-zero{font-size: 0;}
 .uk-text-white{color: #fff;}
 .uk-text-tiny{font-size: 12px};
+.uk-line-height-normal{line-height: normal;}
+.uk-background-white{background-color: #fff;}
+.f100{font-variation-settings: 'wght' 100;}
+.f200{font-variation-settings: 'wght' 200;}
+.f300{font-variation-settings: 'wght' 300;}
+.f400{font-variation-settings: 'wght' 400;}
+.f500{font-variation-settings: 'wght' 500;}
+.f600{font-variation-settings: 'wght' 600;}
+.f700{font-variation-settings: 'wght' 700;}
+.f800{font-variation-settings: 'wght' 800;}
+.f900{font-variation-settings: 'wght' 900;}
+span{
+  &.formValidation{
+    display: flex;
+    > span{
+      font-weight: normal;
+      color: @danger600;
+      .font;
+      .f600;
+      &.formError{
+        margin-top: 10px;
+        display: block;
+      }
+    }
+  }
+}
+button{
+  &.rsform-thankyou-button{
+    margin: 0 auto 40px;
+    display: flex;
+    .border-radius(5px);
+  }
+}
+.uk-button{
+  &.uk-button-instagram{
+    background-color: #e1306c;
+    border: 1px solid darken(#e1306c, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#e1306c, 5%);
+    }
+  }
+  &.uk-button-facebook{
+    background-color: #3b5998;
+    border: 1px solid darken(#3b5998, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#3b5998, 5%);
+    }
+  }
+  &.uk-button-telegram{
+    background-color: #179cde;
+    border: 1px solid darken(#179cde, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#179cde, 5%);
+    }
+  }
+  &.uk-button-whatsapp{
+    background-color: #128c7e;
+    border: 1px solid darken(#128c7e, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#128c7e, 5%);
+    }
+  }
+  &.uk-button-twitter{
+    background-color: #1da1f2;
+    border: 1px solid darken(#1da1f2, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#1da1f2, 5%);
+    }
+  }
+  &.uk-button-linkedin,
+  &.uk-button-linkedin-in{
+    background-color: #0077b5;
+    border: 1px solid darken(#0077b5, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#0077b5, 5%);
+    }
+  }
+  &.uk-button-social{
+    font-size: 20px;
+  }
+}
+
+//Datepicker
+#shipping_date{
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 1; /* Firefox */
+    font-size: 12px;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 12px;
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    font-size: 12px;
+  }
+}
+.ui-datepicker{
+  background-color: #fff;
+  .border-radius(5px);
+  .box-shadow(0 2px 8px rgba(0, 0, 0, .08));
+  .transform(translateY(10px));
+  > div,
+  > table{
+    padding: 15px;
+  }
+  table{
+    &.ui-datepicker-calendar{
+      font-size: 0;
+      thead{
+        tr{
+          th{
+            color: #999;
+          }
+        }
+      }
+      th,td{
+        padding: 0;
+        span,a{
+          font-size: 14px;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          .font;
+          .border-radius(5px);
+        }
+        a{
+          text-decoration: none;
+          color: #222;
+          &:hover{
+            background-color: #f0f0f0;
+          }
+        }
+        &.ui-datepicker-today{
+          a{
+            background-color: @primary;
+            color: #fff;
+            font-weight: 700;
+          }
+        }
+      }
+      .ui-state-disabled {
+        opacity: .3;
+        cursor: no-drop;
+      }
+    }
+  }
+}
+
+//Plyr
+button{
+  &.plyr__control{
+    &.plyr__control--overlaid,
+    &:hover{
+      background-color: @secondary !important;
+    }
+  }
+}
+.plyr--full-ui input[type=range]{color: @secondary !important;}
+
+//dornav
+.uk-dotnav{
+  li{
+    a{
+      border: none;
+      background-color: @primary;
+      opacity: .1;
+      .border-radius(5px);
+      .transition();
+      &:hover{
+        opacity: .5;
+        background-color: @primary;
+      }
+    }
+    &.uk-active{
+      a{
+        opacity: 1;
+        background-color: @primary;
+        width: 20px;
+      }
+    }
+  }
+}

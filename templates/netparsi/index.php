@@ -70,9 +70,9 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	<jdoc:include type="scripts" />
 </head>
 <body class="<?php echo $option . ' view-' . $view . ($layout ? ' layout-' . $layout : ' no-layout') . ($task ? ' task-' . $task : ' no-task') . ($itemid ? ' itemid-' . $itemid : '') . ($pageclass ? ' ' . $pageclass : '') . ($this->direction == 'rtl' ? ' rtl' : ''); ?>">
-    <header class="uk-background-muted uk-padding uk-padding-remove-horizontal uk-padding-remove-bottom uk-position-relative <?php echo $pageclass; ?>">
+    <header class="uk-box-shadow-large uk-background-muted uk-padding uk-padding-remove-horizontal uk-padding-remove-bottom uk-position-relative uk-background-center-center uk-background-cover <?php echo $pageclass; ?>" style="background-image: url('<?php echo $pageparams->get('headerbg') ? (HTMLHelper::cleanImageURL($pageparams->get('headerbg')))->url : (HTMLHelper::cleanImageURL($params->get('default_header_bg')))->url; ?>');">
         <div class="uk-container uk-position-relative">
-            <nav class="uk-background-primary uk-margin-remove uk-border-rounded main" data-uk-sticky="start: 250; animation: uk-animation-slide-bottom-small;">
+            <nav class="uk-background-primary uk-margin-remove uk-border-rounded main" data-uk-sticky="start: 300; animation: uk-animation-slide-top;">
                 <div class="uk-container">
                     <div class="uk-grid-small" data-uk-grid>
                         <div class="uk-width-1-5 uk-hidden@s uk-flex uk-flex-middle">
@@ -134,8 +134,22 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     <?php if ($this->countModules('bottomout', true)) : ?>
         <jdoc:include type="modules" name="bottomout" style="html5" />
     <?php endif; ?>
-    <footer class="uk-background-primary uk-text-zero uk-overflow-hidden uk-position-relative">
+    <?php if ($this->countModules('reserve', true)) : ?>
+        <jdoc:include type="modules" name="reserve" style="html5" />
+    <?php endif; ?>
+    <footer class="uk-background-primary uk-overflow-hidden uk-position-relative">
         <span class="uk-position-absolute curves"><img src="<?php echo JUri::base().'images/sprite.svg#curves'; ?>" data-uk-svg></span>
+        <?php if ($pageclass != 'contact' && $this->countModules('newsletter', true)) { ?>
+            <section class="uk-position-relative newsletter <?php if ($this->countModules('reserve', true)) echo 'accent'; ?>">
+                <div class="uk-container">
+                    <div>
+                        <div class="uk-background-secondary uk-box-shadow-large uk-border-rounded uk-padding uk-position-relative">
+                            <jdoc:include type="modules" name="newsletter" style="none" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?php } ?>
         <div class="uk-padding-large uk-padding-remove-horizontal modules uk-position-relative">
             <div class="uk-container">
                 <div class="uk-position-relative particles">
@@ -156,7 +170,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                             </ul>
                         </div>
                         <div class="uk-width-1-1 uk-width-1-3@s contact">
-                            <h5><?php echo JText::_('STAY_IN_TOUCH'); ?></h5>
+                            <h5><?php echo JText::_('CALL_US'); ?></h5>
                             <ul class="uk-grid-small" data-uk-grid>
                                 <li class="uk-text-small uk-flex uk-flex-middle uk-width-1-1"><i class="fal fa-map-signs fa-fw fa-lg uk-margin-left uk-text-secondary"></i><a href="#" class="uk-text-white font f500"><?php echo $params->get('address'); ?></a></li>
                                 <li class="uk-text-small uk-flex uk-flex-middle uk-width-1-2 uk-width-1-1@m"><i class="fal fa-phone fa-flip-horizontal fa-fw fa-lg uk-margin-left uk-text-secondary"></i><a href="tel:<?php echo $params->get('phone'); ?>" class="uk-text-white font f500 ltr"><?php echo $params->get('phone'); ?></a></li>
