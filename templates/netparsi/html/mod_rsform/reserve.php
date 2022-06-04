@@ -13,7 +13,7 @@ $app  = JFactory::getApplication();
 $params = $app->getTemplate(true)->params;
 ?>
 <div id="rsfp-thankyou-scroll5"></div>
-<section class="uk-background-accent uk-padding-large uk-padding-remove-horizontal" id="reserve">
+<section class="uk-background-accent uk-padding-large uk-padding-remove-horizontal reserve" id="reserve">
     <div class="uk-container">
         <div class="uk-text-center uk-margin-large-bottom">
             <h4 class="font f700 uk-text-primary uk-margin-remove uk-h3"><?php echo $module->title; ?></h4>

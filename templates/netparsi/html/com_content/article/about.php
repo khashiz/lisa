@@ -46,25 +46,9 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
 	}
 	?>
 
-	<?php $useDefList = $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')
-	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') || $assocParam; ?>
+	<?php $useDefList = $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') || $assocParam; ?>
 
-	<?php if ($params->get('show_title')) : ?>
-	<div class="page-header">
-		<<?php echo $htag; ?> itemprop="headline">
-			<?php echo $this->escape($this->item->title); ?>
-		</<?php echo $htag; ?>>
-		<?php if ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED) : ?>
-			<span class="badge bg-warning text-light"><?php echo Text::_('JUNPUBLISHED'); ?></span>
-		<?php endif; ?>
-		<?php if ($isNotPublishedYet) : ?>
-			<span class="badge bg-warning text-light"><?php echo Text::_('JNOTPUBLISHEDYET'); ?></span>
-		<?php endif; ?>
-		<?php if ($isExpired) : ?>
-			<span class="badge bg-warning text-light"><?php echo Text::_('JEXPIRED'); ?></span>
-		<?php endif; ?>
-	</div>
-	<?php endif; ?>
+
 	<?php if ($canEdit) : ?>
 		<?php echo LayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item)); ?>
 	<?php endif; ?>
@@ -98,9 +82,37 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
 	<?php if (isset ($this->item->toc)) :
 		echo $this->item->toc;
 	endif; ?>
-	<div itemprop="articleBody" class="com-content-article__body">
-		<?php echo $this->item->text; ?>
-	</div>
+    <div class="uk-container">
+        <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-grid-column-large uk-grid-row-medium uk-grid" data-uk-grid="">
+            <div class="uk-flex-first uk-first-column">
+                <div class="uk-cover-container uk-border-rounded uk-box-shadow-medium uk-overflow-hidden">
+                    <canvas width="800" height="445"></canvas>
+                    <img src="/lisa/images/p1.jpg" width="" height="" class="uk-width-1-1" data-uk-cover="" style="height: 314px; width: 628px;">
+                </div>
+            </div>
+            <div class="uk-flex uk-flex-middle ">
+                <div class="uk-flex-1">
+                    <?php if ($params->get('show_title')) : ?>
+                    <div class="page-header">
+                        <<?php echo $htag; ?> itemprop="headline" class="font f700 uk-text-primary uk-h3">
+                        <?php echo $this->escape($this->item->title); ?>
+                    </<?php echo $htag; ?>>
+                    <?php if ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED) : ?>
+                        <span class="badge bg-warning text-light"><?php echo Text::_('JUNPUBLISHED'); ?></span>
+                    <?php endif; ?>
+                    <?php if ($isNotPublishedYet) : ?>
+                        <span class="badge bg-warning text-light"><?php echo Text::_('JNOTPUBLISHEDYET'); ?></span>
+                    <?php endif; ?>
+                    <?php if ($isExpired) : ?>
+                        <span class="badge bg-warning text-light"><?php echo Text::_('JEXPIRED'); ?></span>
+                    <?php endif; ?>
+                </div>
+                <?php endif; ?>
+                <div itemprop="articleBody" class="uk-text-justify font f400 uk-line-height-normal com-content-article__body"><?php echo $this->item->text; ?></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 	<?php if ($info == 1 || $info == 2) : ?>
 		<?php if ($useDefList) : ?>

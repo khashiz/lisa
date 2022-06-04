@@ -100,6 +100,15 @@ button{
   }
 }
 
+.uk-progress{
+  background-color: #f0f0f0;
+  height: 6px;
+}
+.uk-progress::-webkit-progress-bar{background-color: #f0f0f0;}
+.uk-progress::-webkit-progress-value{background-color:@primary;}
+.uk-progress::-moz-progress-bar{background-color:@primary;}
+.uk-progress::-ms-fill{background-color:@primary;}
+
 //Datepicker
 #shipping_date{
   &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -199,6 +208,39 @@ button{
         background-color: @primary;
         width: 20px;
       }
+    }
+  }
+}
+
+//Notifications
+.uk-notification{
+  direction: rtl;
+  .uk-notification-message{
+    padding: 20px;
+    .border-radius(5px);
+    .box-shadow(0 8px 15px 0 rgba(0, 0, 0, .08));
+    div{
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 14px;
+      .f500;
+      .font;
+    }
+    a{
+      color: #fff;
+      &.uk-notification-close{
+        display: none;
+      }
+    }
+    &.uk-notification-message-success{
+      background-color: @success600;
+    }
+    &.uk-notification-message-danger{
+      background-color: @danger600;
+    }
+    &.uk-notification-message-warning{
+      background-color: yellow;
     }
   }
 }
