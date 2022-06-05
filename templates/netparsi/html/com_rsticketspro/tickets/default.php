@@ -105,7 +105,7 @@ echo $this->globalMessage;
 
 
         <?php if ($this->params->get('show_page_heading', 1)) { ?>
-            <h1 class="font uk-h4 uk-text-primary f600"><?php echo $this->escape($this->params->get('page_heading', $this->params->get('page_title'))); ?></h1>
+            <h1 class="font uk-h4 uk-text-primary f600 uk-text-center uk-text-right@s"><?php echo $this->escape($this->params->get('page_heading', $this->params->get('page_title'))); ?></h1>
         <?php } ?>
 
         <?php if ($this->isSearching || ($this->isStaff && $this->hasSearches)) { ?>
@@ -149,7 +149,7 @@ echo $this->globalMessage;
             </div>
         <?php } ?>
 
-<table class="uk-table uk-table-divider uk-table-striped uk-table-middle uk-margin-remove">
+<table class="uk-table uk-table-divider uk-table-striped uk-table-middle uk-margin-remove uk-table-responsive">
 <?php
 if ($this->params->get('show_headings', 1))
 {
@@ -286,7 +286,7 @@ if ($this->params->get('show_headings', 1))
 			?>
 			<tr class="rst_priority_color_<?php echo $item->priority_id; ?>">
 				<?php if ($this->params->get('show_offset', 1)) { ?>
-				<td class="uk-text-small font f500 uk-text-center"><?php echo $this->pagination->getRowOffset($i); ?></td>
+				<td class="uk-text-small font f500 uk-text-center uk-visible@s"><?php echo $this->pagination->getRowOffset($i); ?></td>
 				<?php } ?>
 
 				<?php if ($this->isStaff) { ?>
@@ -294,11 +294,11 @@ if ($this->params->get('show_headings', 1))
 				<?php } ?>
 
 				<?php if ($this->params->get('show_date', 1)) { ?>
-				<td class="uk-text-small font f500 uk-text-center"><?php echo $this->escape($this->showDate($item->date)); ?></td>
+				<td class="uk-text-small font f500 uk-text-center"><?php echo '<span class="uk-hidden@s uk-text-muted">'.JText::_('RST_TICKET_DATE').'&ensp;:&ensp;</span>'.$this->escape($this->showDate($item->date)); ?></td>
 				<?php } ?>
 
 				<?php if ($this->params->get('show_last_reply', 1)) { ?>
-				<td class="uk-text-small font f500 uk-text-center"><?php echo $this->escape($this->showDate($item->last_reply)); ?></td>
+				<td class="uk-text-small font f500 uk-text-center"><?php echo '<span class="uk-hidden@s uk-text-muted">'.JText::_('RST_TICKET_LAST_REPLY').'&ensp;:&ensp;</span>'.$this->escape($this->showDate($item->last_reply)); ?></td>
 				<?php } ?>
 
 				<?php if ($this->isStaff) { ?>
@@ -313,14 +313,14 @@ if ($this->params->get('show_headings', 1))
 				<?php } ?>
 
 				<td class="uk-text-center rst_cell_subject">
-					<a class="uk-text-small font f500 uk-text-center listItemLink" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=ticket&id='.$item->id.':'.JFilterOutput::stringURLSafe($item->subject)); ?>"><?php echo $this->escape($item->subject); ?></a>
+					<a class="uk-text-small font f500 uk-text-center listItemLink" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=ticket&id='.$item->id.':'.JFilterOutput::stringURLSafe($item->subject)); ?>"><?php echo '<span class="uk-hidden@s uk-text-muted">'.JText::_('RST_TICKET_SUBJECT').'&ensp;:&ensp;</span>'.$this->escape($item->subject); ?></a>
 				</td>
                 <td class="uk-text-center">
                     <?php if ($item->has_files) { ?>
                         <i class="rsticketsproicon-attach"></i>
                     <?php } ?>
                     <?php if ($this->params->get('show_code', 1)) { ?>
-                        <a class="uk-text-small font f500 uk-text-center listItemLink" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=ticket&id='.$item->id.':'.JFilterOutput::stringURLSafe($item->subject)); ?>"><?php echo $item->code; ?></a>
+                        <a class="uk-text-small font f500 uk-text-center listItemLink" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=ticket&id='.$item->id.':'.JFilterOutput::stringURLSafe($item->subject)); ?>"><?php echo '<span class="uk-hidden@s uk-text-muted">'.JText::_('RST_TICKET_CODE').'&ensp;:&ensp;</span>'.$item->code; ?></a>
                         <?php if ($this->params->get('show_replies', 1)) { ?>
                             (<?php echo $item->replies; ?>)
                         <?php } ?>

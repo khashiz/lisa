@@ -211,7 +211,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                             <div class="uk-grid-collapse uk-height-1-1" data-uk-grid>
                                 <div class="uk-flex uk-width-1-4 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove uk-text-black"><i class="far fa-chevron-<?php echo $this->direction == 'rtl' ? 'right' : 'left'; ?>"></i></a></div>
                                 <div class="logo uk-flex uk-flex-center uk-flex-column uk-width-expand">
-                                    <span class="f900 font uk-display-block uk-text-black"><?php echo $sitename; ?></span>
+                                    <span class="f700 font uk-display-block uk-text-black"><?php echo $sitename; ?></span>
                                 </div>
                             </div>
                         </div>

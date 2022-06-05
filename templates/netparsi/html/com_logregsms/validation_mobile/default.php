@@ -20,7 +20,7 @@ else{
 }
 ?>
 <div id="logregsms" class="uk-width-1-1 uk-width-1-4@m uk-margin-auto validation-mobile">
-    <div class="uk-height-viewport uk-flex uk-flex-column uk-flex-center">
+    <div class="uk-height-viewport uk-flex uk-flex-column uk-flex-center uk-container">
         <div class="uk-border-rounded uk-padding uk-box-shadow-small uk-background-white">
             <h1 class="uk-text-primary font f700 uk-h4 uk-text-center uk-margin-medium-bottom"><?php echo JText::_('AUTH_HEADING'); ?></h1>
             <form class="noFieldset" action="<?php echo JRoute::_('index.php?option=com_logregsms&task=validation_mobile.step1'); ?>" method="post" name="step1form" id="step1form" onSubmit="return ValidationMobileForm()">
@@ -43,7 +43,7 @@ else{
                 <input type="hidden" name="referer" value="<?php echo $referer; ?>">
             </form>
         </div>
-        <a href="<?php echo JUri::base(); ?>" class="uk-display-inline-block uk-margin-top font f500 uk-text-tiny uk-text-muted">
+        <a href="<?php echo JUri::base(); ?>" class="uk-display-inline-block uk-margin-top font f500 uk-text-tiny uk-text-muted uk-text-center uk-text-right@s">
             <i class="fas fa-arrow-turn-right uk-margin-small-left"></i>
             <span><?php echo JText::_('BACK_TO_HOME'); ?></span>
         </a>

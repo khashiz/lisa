@@ -25,11 +25,4 @@ if ($params->get('backgroundimage'))
 }
 
 ?>
-<section class="uk-padding-large uk-padding-remove-horizontal" id="<?php echo $modId; ?>">
-    <div class="<?php if ($params->get('module_width') == 'grid') echo 'uk-container'; ?>">
-        <div class="uk-child-width-1-1 uk-child-width-1-2@s" data-uk-grid>
-            <div>aaaaaa</div>
-            <div>gtrtrgtrgtrrgg</div>
-        </div>
-    </div>
-</section>
+<iframe class="uk-width-1-1 uk-box-shadow-medium" src="<?php echo $params->get('map_url'); ?>" width="1280" height="380" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

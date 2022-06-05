@@ -21,6 +21,9 @@
 	<help key="Site_Modules:_Custom" />
 	<config>
 		<fields name="params">
+			<fieldset name="basic">
+				<field name="map_url" type="text" label="NTP_MAP_URL" />
+			</fieldset>
 			<fieldset name="options" label="COM_MODULES_BASIC_FIELDSET_LABEL">
 				<field
 					name="prepare_content"

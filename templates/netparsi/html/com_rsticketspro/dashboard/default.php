@@ -130,7 +130,7 @@ echo JText::_(RSTicketsProHelper::getConfig('global_message'));
 		?>
 		<div id="rsticketspro_dashboard_tickets" class="row-fluid">
 			<div class="span12">
-				<h3 class="font uk-h4 uk-text-primary f600 uk-margin-medium-bottom"><?php echo JText::_('RST_MY_LAST_TICKETS'); ?></h3>
+				<h3 class="font uk-h4 uk-text-primary f600 uk-margin-medium-bottom uk-text-center uk-text-right@s"><?php echo JText::_('RST_MY_LAST_TICKETS'); ?></h3>
 				<?php
 				if ($this->user->get('guest'))
 				{
@@ -146,7 +146,7 @@ echo JText::_(RSTicketsProHelper::getConfig('global_message'));
 					if (count($this->tickets))
 					{
 						?>
-						<table class="uk-table uk-table-divider uk-table-striped uk-table-middle uk-margin-remove">
+						<table class="uk-table uk-table-divider uk-table-striped uk-table-middle uk-margin-remove uk-table-responsive">
 							<thead>
 							<tr>
                                 <th class="uk-text-center uk-text-tiny font f500 uk-text-muted"><?php echo JText::_('RST_TICKET_SUBJECT'); ?></th>
@@ -162,11 +162,11 @@ echo JText::_(RSTicketsProHelper::getConfig('global_message'));
 								?>
 								<tr>
 									<td class="uk-text-center">
-                                        <a class="uk-text-small font f500 uk-text-center uk-text-dark listItemLink" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=ticket&id='.$ticket->id.':'.JFilterOutput::stringURLSafe($ticket->subject)); ?>"><?php echo $this->escape($ticket->subject); ?></a>
+                                        <a class="uk-text-small font f500 uk-text-center uk-text-dark listItemLink" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=ticket&id='.$ticket->id.':'.JFilterOutput::stringURLSafe($ticket->subject)); ?>"><?php echo '<span class="uk-hidden@s">'.JText::_('RST_TICKET_SUBJECT').'&ensp;:&ensp;</span>'.$this->escape($ticket->subject); ?></a>
                                     </td>
-                                    <td class="uk-text-small font f500 uk-text-center uk-text-dark"><?php echo $this->escape(JText::_($ticket->status_name)); ?></td>
+                                    <td class="uk-text-small font f500 uk-text-center uk-text-dark"><?php echo '<span class="uk-hidden@s">'.JText::_('RST_TICKET_STATUS').'&ensp;:&ensp;</span>'.$this->escape(JText::_($ticket->status_name)); ?></td>
                                     <td class="uk-table-shrink">
-                                        <a href="" class="uk-button uk-button-secondary uk-button-small uk-border-pill uk-box-shadow-small uk-width-small"><?php echo JText::_('VIEW_TICKET'); ?></a>
+                                        <a href="" class="uk-button uk-button-secondary uk-button-small uk-border-pill uk-box-shadow-small uk-width-1-1 uk-width-small@s"><?php echo JText::_('VIEW_TICKET'); ?></a>
                                     </td>
 								</tr>
                             <?php } ?>

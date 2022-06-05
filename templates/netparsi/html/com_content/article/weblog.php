@@ -141,18 +141,18 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
             <?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
                 <?php $this->item->tagLayout = new FileLayout('joomla.content.tags'); ?>
                 <div class="uk-margin-medium-top">
-                    <div class="uk-grid-column-small uk-grid-row-medium" data-uk-grid>
-                        <div class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-middle uk-text-center uk-text-right@m">
-                            <span class="uk-display-block uk-text-tiny font f500 uk-text-muted"><?php echo JText::_('TAGS').' :'; ?></span>
+                    <div class="uk-grid-small" data-uk-grid>
+                        <div class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-middle uk-flex-center uk-flex-right@s uk-text-center uk-text-right@m">
+                            <span class="uk-display-block uk-text-tiny font f500 uk-text-muted"><?php echo JText::_('TAGS'); ?></span>
                         </div>
                         <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
                     </div>
                 </div>
             <?php endif; ?>
 
-            <hr class="uk-margin-medium">
-            <div class="uk-grid-column-small uk-grid-row-medium uk-grid-match" data-uk-grid>
-                <div class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-middle uk-text-center uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right':'left'; ?>@m">
+            <hr>
+            <div class="uk-grid-small" data-uk-grid>
+                <div class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-middle uk-flex-center uk-flex-right@s uk-text-center uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right':'left'; ?>@m">
                     <span class="uk-display-block uk-text-tiny font f500 uk-text-muted"><?php echo JText::sprintf('SHARETHIS'); ?></span>
                 </div>
                 <div class="uk-width-1-1 uk-width-expand@s">
@@ -163,7 +163,7 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
                         <li><a href="https://wa.me/?text=<?php echo JURI::current(); ?>" target="_blank" class="uk-button-social uk-button uk-border-rounded uk-box-shadow-small uk-flex uk-flex-center uk-flex-middle uk-padding-small uk-button-whatsapp"><i class="fab fa-whatsapp"></i></a></li>
                     </ul>
                 </div>
-                <div class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-bottom uk-flex-center readmore">
+                <div class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-bottom uk-flex-center readmore uk-visible@s">
                     <a class="font f500 uk-position-relative uk-display-inline-block uk-text-small readmore" href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->slug)); ?>">
                         <span><?php echo JText::sprintf('BACKTO').' '.$this->item->category_title; ?></span>
                         <i class="fas fa-chevron-left"></i>
@@ -172,7 +172,7 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
             </div>
 
         </div>
-            <div class="uk-width-1-1 uk-width-1-4@s"><?php echo JHtml::_('content.prepare', '{loadposition magside}'); ?></div>
+            <div class="uk-width-1-1 uk-width-1-4@s uk-visible@s"><?php echo JHtml::_('content.prepare', '{loadposition magside}'); ?></div>
         </div>
     </div>
 </div>

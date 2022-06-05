@@ -330,3 +330,68 @@ button{
     color: @danger50;
   }
 }
+
+//Offcanvas Menu
+.uk-offcanvas {
+  z-index: 9999;
+  &:before {
+    background-color: rgba(0, 0, 0, .5);
+  }
+  div {
+    &.uk-offcanvas-bar {
+      background-color: #fff;
+      div {
+        &.offcanvasTop {
+          background-color: @primary;
+          height: 80px;
+          &.active {
+            height: 60px;
+          }
+        }
+      }
+      ul {
+        &.uk-nav {
+          > li {
+            > a {
+              font-size: 16px;
+              padding: 15px 0;
+              color: #000;
+              .font;
+              .f500;
+            }
+            ul {
+              > li {
+                > a {
+                  font-size: 14px;
+                  display: block;
+                  padding: 0 15px 20px 0;
+                  color: #222;
+                  .font;
+                  .f600;
+                }
+              }
+            }
+            &.uk-parent {
+              > a {
+                &:after {
+                  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%20%2F%3E%0A%3C%2Fsvg%3E");
+                  opacity: .3;
+                }
+              }
+              &.uk-open {
+                > a {
+                  &:after {
+                    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%3C%2Fsvg%3E");
+                  }
+                }
+              }
+            }
+            &:not(:first-child) {
+              border-top: 1px solid #f0f0f0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

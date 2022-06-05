@@ -50,7 +50,7 @@ echo $this->submitMessage;
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_rsticketspro&view=submit'); ?>" method="post" name="adminForm" id="adminForm" enctype="multipart/form-data" class="form-horizontal">
     <?php if ($this->params->get('show_page_heading')) { ?>
-        <h1 class="font uk-h4 uk-text-primary f600 uk-margin-medium-bottom"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
+        <h1 class="font uk-h4 uk-text-primary f600 uk-margin-medium-bottom uk-text-center uk-text-right@s"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
     <?php } ?>
     <div class="uk-child-width-1-1 uk-child-width-1-3@s uk-flex-center" data-uk-grid>
 <?php

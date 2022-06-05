@@ -14,7 +14,7 @@ JHtml::_('behavior.keepalive');
 <?php echo $this->globalMessage; ?>
 <div class="uk-box-shadow-medium uk-border-rounded uk-padding uk-background-white">
     <?php if ($this->params->get('show_page_heading', 1)) { ?>
-        <h1 class="font uk-h4 uk-text-primary f600 uk-margin-medium-bottom"><?php echo $this->escape($this->params->get('page_heading', $this->params->get('page_title'))); ?></h1>
+        <h1 class="font uk-h4 uk-text-primary f600 uk-margin-medium-bottom uk-text-center uk-text-right@s"><?php echo $this->escape($this->params->get('page_heading', $this->params->get('page_title'))); ?></h1>
     <?php } ?>
     <form id="rsticketspro_form" action="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=tickets'.$this->itemid); ?>" method="post" name="searchForm">
         <div class="uk-grid-small" data-uk-grid>

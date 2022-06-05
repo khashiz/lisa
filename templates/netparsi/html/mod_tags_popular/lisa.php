@@ -24,7 +24,7 @@ use Joomla\Component\Tags\Site\Helper\RouteHelper;
 	<ul class="uk-child-width-auto uk-grid-small" data-uk-grid>
 	<?php foreach ($list as $item) : ?>
 	<li>
-		<a class="uk-label tag uk-flex uk-flex-middle uk-border-pill f500 font" href="<?php echo Route::_(RouteHelper::getTagRoute($item->tag_id . ':' . $item->alias)); ?>">
+		<a class="uk-label uk-label-default tag uk-flex uk-flex-middle uk-border-pill f500 font" href="<?php echo Route::_(RouteHelper::getTagRoute($item->tag_id . ':' . $item->alias)); ?>">
 			<?php echo htmlspecialchars($item->title, ENT_COMPAT, 'UTF-8'); ?></a>
 		<?php if ($display_count) : ?>
 			<span class="tag-count badge bg-info"><?php echo $item->count; ?></span>
