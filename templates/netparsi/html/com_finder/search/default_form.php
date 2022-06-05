@@ -28,13 +28,15 @@ if ($this->params->get('show_autosuggest', 1))
 	<?php echo $this->getFields(); ?>
 	<fieldset class="com-finder__search word mb-3">
 		<div class="form-inline">
-			<label for="q" class="uk-form-label">
+			<label for="q" class="uk-hidden uk-form-label">
 				<?php echo Text::_('COM_FINDER_SEARCH_TERMS'); ?>
 			</label>
 			<div class="input-group uk-grid-small uk-child-width-1-1 uk-child-width-expand@s" data-uk-grid>
-				<input type="text" name="q" id="q" class="uk-input uk-form-large js-finder-search-query form-control" value="<?php echo $this->escape($this->query->input); ?>">
+                <div class="uk-width-expand">
+                    <input type="text" name="q" autofocus id="q" class="uk-input uk-form-large js-finder-search-query form-control" value="<?php echo $this->escape($this->query->input); ?>" placeholder="<?php echo Text::_('COM_FINDER_SEARCH_TERMS'); ?>">
+                </div>
                 <div class="uk-width-1-1 uk-width-1-4@s">
-                    <button type="submit" class="uk-button uk-button-primary uk-border-rounded uk-button-large uk-height-1-1 uk-width-1-1">
+                    <button type="submit" class="uk-button uk-button-secondary uk-border-rounded uk-button-large uk-height-1-1 uk-width-1-1">
                         <span class="icon-search icon-white" aria-hidden="true"></span>
                         <?php echo Text::_('JSEARCH_FILTER_SUBMIT'); ?>
                     </button>

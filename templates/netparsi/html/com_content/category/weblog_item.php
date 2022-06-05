@@ -42,7 +42,7 @@ $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED 
                 <?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
             <?php endif; ?>
             <?php echo LayoutHelper::render('joomla.content.weblog_listitem_title', $this->item); ?>
-            <div class="uk-text-tiny f500 font"><?php echo $this->item->introtext; ?></div>
+            <div class="uk-text-tiny f500 font font uk-margin-bottom uk-line-height-normal"><?php echo $this->item->introtext; ?></div>
             <?php if ($params->get('show_readmore') && $this->item->readmore) :
                 if ($params->get('access-view')) :
                     $link = Route::_(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));

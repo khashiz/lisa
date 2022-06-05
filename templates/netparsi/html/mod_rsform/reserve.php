@@ -25,8 +25,8 @@ $params = $app->getTemplate(true)->params;
             </div>
             <div>
                 <div class="uk-background-white uk-border-rounded uk-box-shadow-medium uk-padding uk-height-1-1">
-                    <h4 class="font f700 uk-text-primary uk-h5"><?php echo $params->get('hours_title'); ?></h4>
-                    <p class="font f500 uk-text-small"><?php echo $params->get('hours_text'); ?></p>
+                    <h4 class="font f700 uk-text-primary uk-h5 uk-text-center uk-text-right@s"><?php echo $params->get('hours_title'); ?></h4>
+                    <p class="font f500 uk-text-small uk-text-center uk-text-right@s"><?php echo $params->get('hours_text'); ?></p>
                     <div class="uk-padding-small uk-background-muted uk-border-rounded uk-text-zero">
                         <div class="uk-grid-small uk-child-width-1-1" data-uk-grid>
                             <?php foreach ($params->get('hours') as $item) : ?>

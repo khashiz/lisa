@@ -10,18 +10,18 @@
 defined('_JEXEC') or die;
 
 ?>
-<div class="blog-featured" itemscope itemtype="https://schema.org/Blog">
+<div>
+<div class="uk-container blog-featured" itemscope itemtype="https://schema.org/Blog">
 	<?php if ($this->params->get('show_page_heading') != 0) : ?>
-	<div class="page-header">
-		<h1>
-		<?php echo $this->escape($this->params->get('page_heading')); ?>
-		</h1>
+	<div class="page-header uk-margin-large-bottom">
+		<h1 class="uk-text-primary uk-text-center font f900 uk-h2 uk-margin-remove uk-animation-scale-down"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
+        <p class="font uk-margin-remove-bottom uk-margin-top font f500 uk-animation-scale-up uk-text-center"><?php echo JText::_('HOME_TEXT'); ?></p>
 	</div>
 	<?php endif; ?>
 
 	<?php $leadingcount = 0; ?>
 	<?php if (!empty($this->lead_items)) : ?>
-		<div class="blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>">
+		<div class="uk-child-width-1-1 uk-child-width-1-3@s blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>" data-uk-grid data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > *; delay: 250; offset-top: -300;">
 			<?php foreach ($this->lead_items as &$item) : ?>
 				<div class="blog-item"
 					itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -71,4 +71,11 @@ defined('_JEXEC') or die;
 		</div>
 	<?php endif; ?>
 
+    <div class="uk-padding-large uk-padding-remove-horizontal">
+        <div class="uk-width-1-1 uk-width-1-3@s uk-margin-auto">
+            <a href="<?php echo JUri::base().'mag'; ?>" class="uk-button uk-button-secondary uk-button-large uk-width-1-1 uk-border-pill uk-box-shadow-small"><?php echo JText::_('SEE_ALL_ITEMS'); ?></a>
+        </div>
+    </div>
+
+</div>
 </div>

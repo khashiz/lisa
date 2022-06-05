@@ -17,7 +17,7 @@ if (!$list)
 }
 
 ?>
-<section class="uk-padding-large uk-padding-remove-horizontal uk-position-relative uk-margin-large-bottom <?php echo $params->get('moduleclass_sfx') ?>">
+<section class="uk-overflow-hidden uk-padding-large uk-padding-remove-horizontal uk-position-relative uk-margin-large-bottom <?php echo $params->get('moduleclass_sfx') ?>">
     <div class="uk-position-relative">
         <div class="uk-container">
             <div class="uk-text-center uk-margin-large-bottom">
@@ -35,8 +35,8 @@ if (!$list)
                             <?php endforeach; ?>
                         </ul>
                     </div>
-                    <span class="uk-position-center-left-out uk-position-medium uk-flex uk-flex-middle uk-flex-center sliderArrow previous uk-border-circle cursorPointer" data-uk-slider-item="previous"><i class="far fa-chevron-left"></i></span>
-                    <span class="uk-position-center-right-out uk-position-medium uk-flex uk-flex-middle uk-flex-center sliderArrow next uk-border-circle cursorPointer" data-uk-slider-item="next"><i class="far fa-chevron-right"></i></span>
+                    <span class="uk-position-center-left-out uk-position-medium uk-flex uk-flex-middle uk-flex-center sliderArrow previous uk-border-circle cursorPointer uk-visible@s" data-uk-slider-item="previous"><i class="far fa-chevron-left"></i></span>
+                    <span class="uk-position-center-right-out uk-position-medium uk-flex uk-flex-middle uk-flex-center sliderArrow next uk-border-circle cursorPointer uk-visible@s" data-uk-slider-item="next"><i class="far fa-chevron-right"></i></span>
                     <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-remove-bottom uk-margin-medium-top"></ul>
                 </div>
             </div>

@@ -16,6 +16,12 @@ header{
     height: 100%;
     background-color: rgba(0, 0, 0, .7);
   }
+  &.home{
+    background: none !important;
+    &:before{
+      display: none;
+    }
+  }
   &.contact{
     background-image: url("https://images.unsplash.com/photo-1499313843378-eebdb187f629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
   }
@@ -134,6 +140,12 @@ a{
     .transition(color .3s ease-out);
     &:hover{
       color: @secondary;
+    }
+    &.hover{
+      .transition(background-color .3s ease-out);
+      &:hover{
+        background-color: @gray100;
+      }
     }
   }
   &.readmore{
@@ -270,6 +282,9 @@ span{
 }
 
 section{
+  &.slideshowWrapper{
+    margin-top: -110px;
+  }
   &.reserve{
     background: linear-gradient(0deg, #fff5f4, transparent);
   }
@@ -361,6 +376,9 @@ footer{
         color: rgba(255, 255, 255, 1);
       }
     }
+    @media(max-width: 639px){
+      display: none;
+    }
   }
   .socials{
     a{
@@ -428,32 +446,7 @@ footer{
   .f500;
   .font;
 }
-.uk-button{
-  font-size: 14px;
-  font-variation-settings: 'wght' 500;
-  .font;
-  &.uk-button-primary{
-    background-color: @primary;
-  }
-  &.uk-button-secondary{
-    background-color: @secondary;
-    &:hover{
-      background-color: darken(@secondary, 4%);;
-    }
-    &:active{
-      background-color: darken(@secondary, 8%);
-      .box-shadow(inset 0 4px 7px 0 rgba(0, 0, 0, .2));
-    }
-  }
-  &.uk-button-small{
-    font-size: 12px;
-    font-variation-settings: 'wght' 600;
-  }
-  &.uk-button-large{
-    font-size: 16px;
-    font-variation-settings: 'wght' 600;
-  }
-}
+
 .uk-select{
   cursor: pointer;
   &:not([multiple]){
@@ -530,17 +523,39 @@ footer{
   padding: 2px 13px 4px;
   background-color: #fff;
   text-decoration: none;
-  color: @secondary;
   font-size: 11px;
-  .box-shadow(0 0 0 1px @secondary);
   .transition();
+  &:hover{
+    color: #fff;
+    text-decoration: none;
+  }
   i{
     margin-left: 8px;
     .transform(translateY(1px));
   }
-  &:hover{
-    color: #fff;
-    text-decoration: none;
-    background-color: @secondary;
+  &.uk-label-default{
+    color: @secondary;
+    .box-shadow(0 0 0 1px @secondary);
+    &:hover{
+      background-color: @secondary;
+      color: #fff;
+    }
+  }
+  &.uk-label-success{
+    color: @success600;
+    background-color: @success50;
+    .box-shadow(0 0 0 1px @success600);
+    &:hover{
+      background-color: @success600;
+      color: #fff;
+    }
+  }
+  &.uk-label-danger{
+    color: @danger600;
+    .box-shadow(0 0 0 1px @danger600);
+    &:hover{
+      background-color: @danger600;
+      color: #fff;
+    }
   }
 }

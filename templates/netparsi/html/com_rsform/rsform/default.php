@@ -25,16 +25,16 @@ $params = $app->getTemplate(true)->params;
                     <div class="uk-box-shadow-medium uk-border-rounded uk-padding"><?php echo RSFormProHelper::displayForm($this->formId); ?></div>
                 </div>
                 <div class="uk-width-1-1 uk-width-1-3@s contactSide">
-                    <h3 class="font uk-h4 uk-text-primary f600 uk-margin-medium-top"><?php echo JText::_('CALL_US'); ?></h3>
+                    <h3 class="font uk-h4 uk-text-primary f600 uk-margin-medium-top uk-text-center uk-text-right@s"><?php echo JText::_('CALL_US'); ?></h3>
                     <ul class="uk-grid-small info" data-uk-grid>
                         <li class="uk-text-small uk-flex uk-flex-middle uk-width-1-1"><i class="fal fa-map-signs fa-fw fa-lg uk-margin-left uk-text-secondary"></i><a href="#" class="uk-text-dark font f500"><?php echo $params->get('address'); ?></a></li>
                         <li class="uk-text-small uk-flex uk-flex-middle uk-width-1-2 uk-width-1-1@m"><i class="fal fa-phone fa-flip-horizontal fa-fw fa-lg uk-margin-left uk-text-secondary"></i><a href="tel:<?php echo $params->get('phone'); ?>" class="uk-text-dark font f500 ltr"><?php echo $params->get('phone'); ?></a></li>
                         <li class="uk-text-small uk-flex uk-flex-middle uk-width-1-2 uk-width-1-1@m"><i class="fal fa-fax fa-flip-horizontal fa-fw fa-lg uk-margin-left uk-text-secondary"></i><a href="<?php echo $params->get('fax'); ?>" class="uk-text-dark font f500 ltr"><?php echo $params->get('fax'); ?></a></li>
                         <li class="uk-text-small uk-flex uk-flex-middle uk-width-1-2 uk-width-1-1@m"><i class="fal fa-envelope-open-text fa-fw fa-lg uk-margin-left uk-text-secondary"></i><a href="mailto:<?php echo $params->get('email'); ?>" class="uk-text-dark font f500 ltr"><?php echo $params->get('email'); ?></a></li>
                     </ul>
-                    <hr class="uk-margin-medium-top uk-margin-medium-bottom uk-divider-icon">
-                    <h3 class="font uk-h4 uk-text-primary f600 uk-margin-medium-top"><?php echo JText::_('SOCIAL_MEDIA'); ?></h3>
-                    <div class="uk-grid-small uk-child-width-expand uk-flex-between" data-uk-grid>
+                    <hr class="uk-margin-medium-top uk-margin-medium-bottom uk-divider-icon uk-visible@s">
+                    <h3 class="font uk-h4 uk-text-primary f600 uk-margin-medium-top uk-text-center uk-text-right@s"><?php echo JText::_('SOCIAL_MEDIA'); ?></h3>
+                    <div class="uk-grid-small uk-child-width-1-3 uk-child-width-expand@s uk-flex-center" data-uk-grid>
                         <?php foreach ($params->get('socials') as $item) : ?>
                             <?php if ($item->icon != '') { ?>
                                 <?php if ($item->icon != 'aparat') { ?>
@@ -46,13 +46,13 @@ $params = $app->getTemplate(true)->params;
                         <?php endforeach; ?>
                     </div>
                     <?php if (!empty($params->get('lat')) && !empty($params->get('lng'))) { ?>
-                        <hr class="uk-margin-medium-top uk-margin-medium-bottom uk-divider-icon">
-                        <div class="uk-hidden@m">
-                            <h2 class="bordered uk-margin-bottom uk-text-heavy uk-h4 uk-text-center uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?>@m uk-hidden@m font"><?php echo JText::sprintf('PATHFINDER'); ?></h2>
+                        <hr class="uk-margin-medium-top uk-margin-medium-bottom uk-divider-icon uk-hidden@s">
+                        <div class="uk-hidden@s uk-margin-medium-top">
+                            <h4 class="font uk-h4 uk-text-primary f600 uk-margin-medium-top uk-text-center uk-text-right@s"><?php echo JText::sprintf('PATH_FINDER'); ?></h4>
                             <div>
                                 <div class="uk-grid-small uk-child-width-1-2" data-uk-grid>
-                                    <div><a href="https://waze.com/ul?ll=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>&navigate=yes" class="uk-width-1-1 uk-padding-small uk-button uk-button-default uk-border-rounded uk-box-shadow-small" target="_blank" rel="noreferrer"><img src="<?php echo JURI::base().'images/waze-logo.svg' ?>" width="100" alt=""></a></div>
-                                    <div><a href="http://maps.google.com/maps?daddr=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>" class="uk-width-1-1 uk-padding-small uk-button uk-button-default uk-border-rounded uk-box-shadow-small" target="_blank" rel="noreferrer"><img src="<?php echo JURI::base().'images/google-maps-logo.svg'; ?>" width="100" alt=""></a></div>
+                                    <div><a href="https://waze.com/ul?ll=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>&navigate=yes" class="uk-width-1-1 uk-padding-small uk-button uk-button-large uk-button-default uk-border-rounded uk-box-shadow-small" target="_blank" rel="noreferrer"><img src="<?php echo JURI::base().'images/waze-logo.svg' ?>" width="100" alt=""></a></div>
+                                    <div><a href="http://maps.google.com/maps?daddr=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>" class="uk-width-1-1 uk-padding-small uk-button uk-button-large uk-button-default uk-border-rounded uk-box-shadow-small" target="_blank" rel="noreferrer"><img src="<?php echo JURI::base().'images/google-maps-logo.svg'; ?>" width="100" alt=""></a></div>
                                 </div>
                             </div>
                         </div>
