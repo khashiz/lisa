@@ -79,11 +79,11 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                             <div class="uk-width-1-5 uk-hidden@s uk-flex uk-flex-middle uk-text-white">
                                 <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-bars fa-fw fa-2x icon"></i></a>
                             </div>
-                            <div class="uk-width-1-5 uk-flex uk-flex-middle uk-flex-center uk-visible@s">
-                                <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block logo"><img src="" width="50" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                            <div class="uk-width-1-5 uk-flex uk-flex-middle uk-flex-center uk-flex-right@s uk-visible@s">
+                                <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block logo"><img src="<?php echo JUri::base().'images/logo_full.svg'; ?>" width="134" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                             </div>
                             <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-center uk-hidden@s">
-                                <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small logo"><img src="" width="50" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                                <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block logo"><img src="<?php echo JUri::base().'images/logo_full.svg'; ?>" width="134" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                             </div>
                             <div class="uk-width-expand uk-flex uk-flex-center uk-visible@s"><jdoc:include type="modules" name="nav" style="html5" /></div>
                             <div class="uk-width-1-5 uk-flex uk-flex-middle uk-flex-left">

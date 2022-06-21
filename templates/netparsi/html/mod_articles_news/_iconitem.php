@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 ?>
 <a href="<?php echo $item->link; ?>" class="uk-border-rounded uk-box-shadow-small uk-box-shadow-hover-medium uk-overflow-hidden uk-height-1-1 uk-text-zero uk-display-block uk-padding serviceItem">
     <span class="uk-display-block uk-margin-bottom uk-text-center">
-        <img src="http://localhost/lisa/images/sprite.svg#hair" width="" height="100" data-uk-svg>
+        <img src="<?php echo JURI::base().'images/sprite.svg#hair'; ?>" width="" height="100" data-uk-svg>
     </span>
     <div class="page-header">
         <h3 class="uk-h5 uk-text-center font f700 uk-margin-remove" itemprop="name"><?php echo $item->title; ?></h3>

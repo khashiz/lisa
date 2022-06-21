@@ -44,7 +44,7 @@ else{
 } 
 ?>
 
-<div id="logregsms" class="uk-width-1-1 uk-width-1-4@m uk-margin-auto validation-code">
+<div id="logregsms" class="uk-width-1-1 uk-width-1-3@s uk-width-1-4@xl uk-margin-auto validation-code">
     <div class="uk-height-viewport uk-flex uk-flex-column uk-flex-center uk-container">
         <div class="uk-border-rounded uk-padding uk-box-shadow-small uk-background-white">
             <h1 class="uk-text-primary font f700 uk-h4 uk-text-center uk-margin-medium-bottom"><?php echo JText::_('AUTH_HEADING'); ?></h1>

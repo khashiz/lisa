@@ -53,6 +53,7 @@ nav{
             height: 70px;
             box-sizing: border-box;
             position: relative;
+            white-space: nowrap;
             .font;
             .transition();
             &[aria-expanded="true"],
@@ -117,6 +118,9 @@ nav{
       border-radius: 0;
       .box-shadow(0 2px 8px rgba(0, 0, 0, .08%));
     }
+    @media(max-width: 639px){
+      .box-shadow(5px 5px 0 0 @secondary);
+    }
   }
 }
 ol{
@@ -134,6 +138,12 @@ ol{
   }
 }
 a{
+  &.logo{
+    padding: 10px 0;
+    #bg{fill: #fff;}
+    #text{fill: @primary;}
+    #leaves{fill: @secondary;}
+  }
   &.listItemLink{
     text-decoration: none;
     color: @primary;
@@ -449,6 +459,15 @@ footer{
       }
     }
   }
+}
+.staffTitle{
+  width: 100%;
+  color: #fff;
+  background: linear-gradient(0deg, @primary, transparent);
+  padding: 25px 0 15px;
+}
+.subtitle{
+  opacity: .85;
 }
 
 // Uikit Overrides

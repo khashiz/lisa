@@ -21,7 +21,7 @@ defined('_JEXEC') or die;
 
 	<?php $leadingcount = 0; ?>
 	<?php if (!empty($this->lead_items)) : ?>
-		<div class="uk-child-width-1-1 uk-child-width-1-3@s blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>" data-uk-grid data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > *; delay: 250; offset-top: -300;">
+		<div class="uk-child-width-1-1 uk-child-width-1-3@s blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>" data-uk-grid data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > *; delay: 250; offset-top: -200;">
 			<?php foreach ($this->lead_items as &$item) : ?>
 				<div class="blog-item"
 					itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
